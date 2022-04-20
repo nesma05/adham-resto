@@ -1,0 +1,22 @@
+<main class="box main">
+  <h5>Modifier les données d'admin</h5>
+  <hr />
+  <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+    <%= locals.errorMessage ? errorMessage : '' %>
+  </div>
+  <form action="/admin/<%= user.id %>?_method=PUT" method="POST">
+    <div class="form-row">
+      <label for="">Nom d'utilisateur :</label>
+      <input type="text" name="name" value="<%= user.name %>" />
+    </div>
+
+    <div class="form-row">
+      <label for="">Mot de passe :</label>
+      <input type="password" name="password" />
+    </div>
+    <div class="form-row form-row-bottons">
+      <button type="submit" class="btn-admin btn-admin-primary">Modifier</button>
+      <a href="/admin" class="btn-admin btn-light">Annuler</a>
+    </div>
+  </form>
+</main>

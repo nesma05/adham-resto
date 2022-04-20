@@ -1,0 +1,48 @@
+<% if (pages > 1) { %>
+    <%
+        let showbuttons = 3
+
+        let maxLeft = (Number(current) - Math.floor(showbuttons / 2))
+        let maxRight = (Number(current) + Math.floor(showbuttons / 2))
+        
+        if (maxLeft < 1) {
+            maxLeft = 1
+            maxRight = showbuttons
+        }
+
+        if (maxRight > pages) {
+            maxLeft = pages - (showbuttons - 1)
+            
+            if (maxLeft < 1){
+                maxLeft = 1
+            }
+            maxRight = pages
+        }
+    %>
+    <% if (current == 1) { %>
+        <a  class="disabled"><i class="icon-to-start"></i></a>
+    <% } else { %>
+        <a href="/admin/dishes/1"><i class="icon-to-start"></i></a>
+    <% } %>
+    
+    <% if (Number(current) > 2) { %>
+        <a>...</a>         
+    <% } %>
+    
+    <% for (let i = maxLeft; i <= maxRight; i++) { %>
+        <% if (i == current) { %>
+            <a class="active"><%= i %></a>
+        <% } else { %>
+            <a href="/admin/dishes/<%= i %>"><%= i %></a>
+        <% } %>
+        <% if (i == maxRight  && i < pages) { %>
+            <a>...</a>
+        <% } %>
+    <% } %>
+
+    <% if (current == pages) { %>
+        <a  class="disabled"><i class="icon-to-end"></i></a>
+    <% } else { %>
+        <a href="/admin/dishes/<%= pages %>"><i class="icon-to-end"></i></a>
+    <% } %>
+<% } %>

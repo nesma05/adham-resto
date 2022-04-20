@@ -1,0 +1,80 @@
+<%- include('includes/navbar'); %>
+
+<div class="loading-screen">
+  <div class="load-scr-contain">
+    <div class="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<!--Hero Section-->
+<section class="services-hero hero-section flex">
+  <div class="hero-section-content">
+    <div class="flower-shape"></div>
+    <h1 class="main-title">Nos Services</h1>
+    <div class="half-circle-shape"></div>
+  </div>
+  <a href="#next-section">
+    <div class="scroll-down"></div>
+  </a>
+  <a href="/admin" class="goTo"></a>
+</section>
+
+<!--Services Section-->
+<section id="next-section" class="services-section section">
+  <div class="services-details flex">
+    <div class="services-section-image slideIn left">
+        <img src="../images/interior.jpg" alt="" />
+    </div>
+    <div class="services-section-text slideIn right">
+        <div class="services-section-title">
+          <h3 class="text-primary secondary-title">Sur place</h3>
+          <div class="flower-shape"></div>
+        </div>
+        <p class="text-regular">
+          Bien venus notre votre restaurant ou vous vous sentez comme chez vous dans
+          une salle avec un atmosphère calme et chaleureux et un service impeccable 
+          qui vous fera sentir comme un roi.
+        </p>
+    </div>
+  </div>
+  <div class="services-details flex">
+    <div class="services-section-image order slideIn right">
+        <img src="../images/take-away.jpg" alt="" />
+    </div>
+    <div class="services-section-text slideIn left">
+        <div class="services-section-title">
+          <h3 class="text-primary secondary-title">Emporter</h3>
+          <div class="flower-shape"></div>
+        </div>
+        <p class="text-regular">
+          Vos Plats sont 100% sure avec nos emballages à emporter professionnels. 
+          Ils conservent les plats chaux et frais assez de temps à votre distination
+        </p>
+    </div>
+  </div>
+  <div class="services-details flex">
+    <div class="services-section-image slideIn left">
+        <img src="../images/food-delivery.jpg" alt="" />
+    </div>
+    <div class="services-section-text slideIn right">
+        <div class="services-section-title">
+          <h3 class="text-primary secondary-title">Livraison</h3>
+          <div class="flower-shape"></div>
+        </div>
+        <p class="text-regular">
+          Nous offrons une livraison rapide et gratuite à domicile ou à votre lieu
+          de travail et à travers toute la ville.
+        </p>
+    </div>
+  </div>
+
+</section>
+
+<%- include('includes/buttonToTop'); %> 
+
+<%- include('includes/footer'); %>

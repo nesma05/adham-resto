@@ -1,0 +1,44 @@
+<div class="form-row">
+  <label for="">Image :</label>
+  <div class="input-file-wrapper team-input-dish">
+    <% if (dish.dishImageName) { %>
+    <img src="<%= dish.dishImagePath %> " alt="" id="dish-preview" class="show" />
+    <% } else { %>
+    <img src="" alt="" id="dish-preview" />
+    <% } %>
+    <label for="uploaded-dish" class="upload-label">
+      <i class="icon-pencil-alt"></i>
+      <input type="file" name="dish" id="uploaded-dish" class="upload-box" />
+    </label>
+  </div>
+</div>
+
+<div class="form-row">
+  <label for="">Nom :</label>
+  <input type="text" name="name" value="<%= dish.name %>" />
+</div>
+<div class="form-row">
+  <label>Catégorie :</label>
+  <select name="category">
+    <% dishesCategories.forEach(dishcategory => { %> 
+      <% if (dishcategory.toLowerCase() == dish.category) { %>
+        <option value="<%= dishcategory %>" selected><%= dishcategory %></option>
+      <% } else { %>
+        <option value="<%= dishcategory %>"><%= dishcategory %></option>
+      <% } %> 
+    <% }); %>
+  </select>
+</div>
+
+<div class="form-row">
+  <label for="">Meilleurs plats :</label>
+  <div class="checkbox-wrapper">
+    <input type="checkbox" class="check" name="featured" value="<%= dish.featured %> " <%=
+    dish.featured === 'yes' ? 'checked' : '' %> />
+  </div>
+</div>
+
+<div class="form-row">
+  <label for="">Prix :</label>
+  <input type="text" name="price" value="<%= dish.price %>" />
+</div>

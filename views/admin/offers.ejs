@@ -1,0 +1,32 @@
+<main class="box main">
+    <div class="main-header flex">
+      <h5>Gérer les offres</h5>
+      <a href="/admin/offers/add" class="btn-admin btn-admin-primary">Ajouter</a>
+    </div>
+    <hr />
+    <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+      <%= locals.errorMessage ? errorMessage : '' %>
+    </div>
+    <table>
+      <thead>
+          <th class="center-text">#</td>
+          <th>Nom</td>
+          <th>Prix</td>
+          <th>Gérer</td>
+      </thead>
+      <% offers.forEach((offer, index) => { %>
+         <tr>
+            <td class="center-text"><%= index + 1 %></td>
+            <td class="capitalize"><%= offer.name %></td>
+            <td><%= offer.price %></td>
+            <td class="center-text flex">
+              <a href="/admin/offers/edit<%= offer.id %>">
+                <i class="icon-edit-alt text-admin-secondary"></i>
+              </a>  
+              <%- include('../includes/delete-form', {url:`/admin/offers/${offer.id}`}); %> 
+            </td>
+         </tr>
+      <% }) %>
+    </table>
+  </main>
+  

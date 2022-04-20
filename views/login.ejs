@@ -1,0 +1,19 @@
+<div class="login-wrapper flex">
+  <form action="/admin/login" method="POST">
+    <div class="<%= locals.error != '' ? 'alert' : '' %>">
+       <%= locals.error ? error : '' %>
+     </div>
+    <div class="form-field">
+      <input type="text" name="name" placeholder="name" />
+      <span></span>
+      <label for="">Nom</label>
+    </div>
+
+    <div class="form-field">
+      <input type="password" name="password" placeholder="password" />
+      <span></span>
+      <label for="">Mot de passe</label>
+    </div>
+    <button type="submit" class="btn-admin btn-admin-primary">Connexion</button>
+  </form>
+</div>

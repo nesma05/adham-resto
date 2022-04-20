@@ -1,0 +1,18 @@
+<main class="box main">
+  <h5>Modifier un plat</h5>
+  <hr />
+  <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+    <%= locals.errorMessage ? errorMessage : '' %>
+  </div>
+  <form
+    method="POST"
+    action="/admin/dishes/<%= dish.id %>?_method=PUT"
+    enctype="multipart/form-data"
+  >
+    <%- include('_form-fields'); %>
+    <div class="form-row form-row-bottons">
+      <button type="submit" class="btn-admin btn-admin-primary">Modifier</button>
+      <a href="/admin/dishes/1" class="btn-admin btn-light">Annuler</a>
+    </div>
+  </form>
+</main>

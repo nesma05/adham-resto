@@ -1,0 +1,14 @@
+<div class="box main">
+  <h5>Ajouter un membre à l'equipe</h5>
+  <hr />
+  <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+    <%= locals.errorMessage ? errorMessage : '' %>
+  </div>
+  <form action="/admin/team" method="POST" enctype="multipart/form-data">
+    <%- include('_form-fields'); %>
+    <div class="form-row form-row-bottons">
+      <button type="submit" class="btn-admin btn-admin-primary">Enregistrer</button>
+      <a href="/admin/team" class="btn-admin btn-light">Annuler</a>
+    </div>
+  </form>
+</div>

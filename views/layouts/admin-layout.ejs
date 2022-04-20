@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Veney découvrir adham restaurant et a cuisine vous surprendra par ses multiples recettes : foie , poissons, brochettes, viandes, poulet, salades, sandwichs, dessert .... Nous vous garantissons une cuisine de qualité grâce à notre savoir-faire et notre chef cuisinier">
+	  <meta name="keywords" content="restauarnt, tanger, poissons, sandwich, dessert, couscous">
+	  <meta name="author" content="nesma aboki">
+    <link rel="stylesheet" href="../../css/fontello.min.css" />
+    <link rel="stylesheet" href="../../css/utilities.min.css" />
+    <link rel="stylesheet" href="../../css/admin-styles.min.css" />
+    <title><%= page_title %></title>
+  </head>
+  <body>
+    <header class="header-section">
+      <nav class="navbar admin-navbar flex">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/services">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="dashboard container">
+      <button id="nav-toggler">
+        <span class="burger-menu"></span>
+      </button>
+      <div class="dashboard-title">
+        <h1>Admin area</h1>
+        <p><i class="icon-user"></i>Bienvenue <strong class="capitalize"><%= user.name %></strong></p>
+      </div>
+      <section class="dashboard-details"> 		  	
+        <aside class="side-menu">
+          <h2 class="side-menu-title">
+            <i class="icon-cog"></i>
+            Paneau de gestion
+          </h2>
+          <ul>
+            <li class="list-item">
+              <i class="icon-google"></i>
+              <a href="/admin" 
+                class="<%= page_title.includes('Géneral')  ? "active" : ""  %>">
+                Géneral
+              </a>
+            </li>
+            <li class="list-item">
+              <i class="icon-user"></i>
+              <a href="/admin/user"
+                class="<%=page_title.includes('Administrateur')  ? "active" : ""  %>">
+                Administrateur
+              </a>
+            </li>
+            <li class="list-item">
+              <i class="icon-group"></i>
+              <a href="/admin/team"
+                class="<%= page_title.includes('Equipe') ? "active" : ""  %>">
+                Equipe de travail
+              </a>
+            </li>
+            <li class="list-item">
+              <i class="icon-food"></i>
+              <a href="/admin/dishes/1"
+                class="<%= page_title.includes('Plats')  ? "active" : ""  %>">
+                Plats
+              </a>
+            </li>
+            <li class="list-item">
+              <i class="icon-tags"></i>
+              <a href="/admin/offers"
+                class="<%= page_title.includes('Offres')  ? "active" : ""  %>">
+                Offres
+              </a>
+            </li>
+            <li class="list-item">
+              <i class="icon-logout"></i>
+              <a href="/admin/logout">Sortir</a>
+            </li>
+          </ul>
+        </aside>
+        <%-body%>
+      </section>
+    </div>
+    <script src="/js/admin-script.js"></script>
+  </body>
+</html>

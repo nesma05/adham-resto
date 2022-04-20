@@ -1,0 +1,14 @@
+<main class="box main">
+  <h5>Modifier une offre</h5>
+  <hr />
+  <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+    <%= locals.errorMessage ? errorMessage : '' %>
+  </div>
+  <form method="POST" action="/admin/offers/<%= offer.id %>?_method=PUT">
+    <%- include('_form-fields'); %>
+    <div class="form-row form-row-bottons">
+      <button type="submit" class="btn-admin btn-admin-primary">Modifier</button>
+      <a href="/admin/offers" class="btn-admin btn-light">Annuler</a>
+    </div>
+  </form>
+</main>

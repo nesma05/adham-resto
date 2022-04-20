@@ -1,0 +1,35 @@
+<main class="box main">
+  <div class="main-header flex">
+    <h5>Gérer l'equipe de travail</h5>
+    <a href="/admin/team/add" class="btn-admin btn-admin-primary">Ajouter</a>
+  </div>
+  <hr />
+  <div class="<%= locals.errorMessage ? 'alert' : '' %>">
+    <%= locals.errorMessage ? errorMessage : '' %>
+  </div>
+  <table>
+    <thead>
+        <th class="center-text">#</td>
+        <th>Avatar</td>
+        <th>Nom</td>
+        <th>Poste</td>
+        <th>Gérer</td>
+    </thead>
+    <% teamMembers.forEach((teamMember, index) => { %>
+       <tr>
+          <td class="center-text"><%= index + 1 %></td>
+          <td>
+            <img src="<%= teamMember.avatarImagePath %> " alt="">
+          </td>
+          <td class="capitalize"><%= teamMember.name %></td>
+          <td class="capitalize"><%= teamMember.job %></td>
+          <td class="center-text flex">
+            <a href="/admin/team/edit<%= teamMember.id %>">
+              <i class="icon-edit-alt text-admin-secondary"></i>
+            </a>  
+            <%- include('../includes/delete-form', {url:`/admin/team/${teamMember.id}`}); %> 
+          </td>
+       </tr>
+    <% }) %>
+  </table>
+</main>

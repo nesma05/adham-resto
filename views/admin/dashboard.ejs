@@ -1,0 +1,27 @@
+<main class="main main-area-general">
+  <div class="main-area-general-top">
+    <div class="box team-box">
+      <h3><i class="icon-group"></i>Equipe</h3>
+      <p><strong><%= teamCount %> </strong> Membres</p>
+    </div>
+    <div class="box dishes-box">
+      <h3><i class="icon-food"></i>Plats</h3>
+      <p>
+        <strong>8</strong> Catégories, <br />
+        <strong><%= dishesCount %></strong> Plats
+      </p>
+    </div>
+  </div>
+  <div class="box dishes-details">
+    <ul>
+      <li><strong><%= categories.starters.length %> </strong> Entrées</li>
+      <li><strong><%= categories.seaFood.length %></strong> Poissons</li>
+      <li><strong><%= categories.specials.length %></strong> Plats modernes</li>
+      <li><strong><%= categories.traditionals.length %></strong> Plats traditionel</li>
+      <li><strong><%= categories.sandwiches.length %></strong> Sandwich</li>
+      <li><strong><%= categories.fastFood.length %></strong> Fast food</li>
+      <li><strong><%= categories.desserts.length %></strong> Dessert</li>
+      <li><strong><%= categories.drinks.length %></strong> Boisson</li>
+    </ul>
+  </div>
+</main>

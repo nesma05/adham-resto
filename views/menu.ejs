@@ -1,0 +1,219 @@
+<%- include('includes/navbar'); %>
+
+<div class="loading-screen">
+  <div class="load-scr-contain">
+    <div class="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<!--Hero Section-->
+<section class="menu-hero hero-section flex">
+  <div class="hero-section-content">
+    <div class="flower-shape"></div>
+    <h1 class="main-title">
+      Explorez <br />
+      Notre Menu
+    </h1>
+    <div class="half-circle-shape"></div>
+  </div>
+  <a href="#sec-2">
+    <div class="scroll-down"></div>
+  </a>
+  <a href="/admin" class="goTo"></a>
+</section>
+
+<!--Menu Section-->
+<section id="sec-2" class="menu-section section flex">
+  <div class="menu-section-details">
+    <div class="menu-section-details-header starters">
+      <h2>Entrées</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.starters) { %>
+          <% categories.starters.forEach((starter) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= starter.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= starter.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header seafood">
+      <h2>Poissons</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.seaFood) { %>
+          <% categories.seaFood.forEach((seaFood) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= seaFood.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= seaFood.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header special-dishes">
+      <h2>Plats</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.specials) { %> 
+          <% categories.specials.forEach((special) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= special.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= special.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header traditional-dishes">
+      <h2>Plats Traditionnels</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.traditionals) { %> 
+          <% categories.traditionals.forEach((traditional) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= traditional.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= traditional.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header sandwich">
+      <h2>Sandwich</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.sandwiches) { %> 
+          <% categories.sandwiches.forEach((sandwich) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= sandwich.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= sandwich.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header fast-food">
+      <h2>Fast Food</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.fastFood) { %> 
+          <% categories.fastFood.forEach((fast) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= fast.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= fast.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header desserts">
+      <h2>Dessert</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.desserts) { %> 
+          <% categories.desserts.forEach((dessert) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= dessert.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= dessert.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header drinks">
+      <h2>Boissons</h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="flower-shape"></div>
+      <div class="all-menu-items">
+        <% if (categories.drinks) { %> 
+          <% categories.drinks.forEach((drink) => { %>
+            <div class="menu-item">
+              <h3 class="capitalize"><%= drink.name %></h3>
+              <div class="menu-item-dots"></div>
+              <span><%= drink.price %>dh</span>
+            </div>
+          <% }) %> 
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="menu-section-details">
+    <div class="menu-section-details-header offers">
+      <h2 class="offers-title"><strong>OFFRES SPECIALS</strong></h2>
+      <i class="icon-angle-double-down"></i>
+    </div>
+    <div class="menu-section-details-body">
+      <div class="offers-body">
+      <% offers.forEach(offer => { %>
+        <div class="offer-container">
+          <div class="flower-shape"></div>
+          <div class="offer-details">         
+              <h3 class="capitalize"><%= offer.name %></h3>
+              <h5 class="capitalize"><%= offer.article1 %></h5>
+              <h5 class="capitalize"><%= offer.article2 %></h5>
+              <h5 class="capitalize"><%= offer.article3 %></h5>
+              <h5 class="capitalize"><%= offer.article4 %></h5>
+              <h5><u>Seulement : </u><span><%= offer.price %> dh</span>           
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    </div>
+  </div>
+</section>
+
+<%- include('includes/buttonToTop'); %> 
+    
+<%- include('includes/footer'); %>

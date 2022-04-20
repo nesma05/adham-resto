@@ -1,0 +1,106 @@
+<%- include('includes/navbar'); %>
+
+<div class="loading-screen">
+  <div class="load-scr-contain">
+    <div class="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<!--Hero Section-->
+<div class="index-page-hero hero-section flex">
+  <div class="hero-section-content">
+    <div class="flower-shape"></div>
+    <h1 class="main-title">
+      Bienvenue chez <br />
+      Restaurant Adham
+    </h1>
+    <p class="hero-section-info">
+      Venez Dégouster Nos Plats Frais <br />
+      Cuisinés et Grillés au Feu de Bois
+    </p>
+    <a href="#best" class="btn btn-primary">Nos Meilleurs Plats</a>
+    <div class="half-circle-shape"></div>
+  </div>
+  <a href="#section-2">
+    <div class="scroll-down"></div>
+  </a>
+  <a href="/admin" class="goTo"></a>
+</div>
+
+<!--About Section-->
+<section id="section-2" class="about-section flex">
+  <div class="about-section-image">
+    <img src="../images/plates.jpg" alt="" />
+  </div>
+  <div class="about-section-text">
+    <div class="about-section-title">
+      <h3 class="text-primary secondary-title">Découvrez</h3>
+      <h4 class="sub-title">Notre Restaurant</h4>
+      <div class="flower-shape"></div>
+    </div>
+    <p class="text-regular">
+      Venez passer la porte de votre restaurant et découvrez sa
+      <strong> cuisine traditionnelle et modernes</strong> qui fera saliver vos papilles.
+      <br />
+      Notre restaurant vous servira des plats préparés avec soin à base de produits locaux
+      et de produits frais. Sa cuisine vous surprendra par ses multiples recettes :
+      <strong
+        >foie , poissons, brochettes, viandes, poulet, salades, sandwichs, dessert
+        ...</strong
+      >. Nous vous garantissons une cuisine de qualité grâce à notre savoir-faire et notre
+      chef cuisinier
+    </p>
+  </div>
+</section>
+
+<!--Best dishes-->
+<section id="best" class="best-dishes-section section">
+  <div class="container">
+    <div class="section-title">
+      <h3 class="text-primary secondary-title">Explorez</h3>
+      <h4 class="sub-title">Nos Meilleurs Plats</h4>
+      <div class="flower-shape"></div>
+    </div>
+    <div class="best-dishes-section-plates flex">
+      <% if (featuredDishes) { %> <% featuredDishes.forEach((featuredDish) => { %>
+      <div class="card">
+        <img src="<%= featuredDish.dishImagePath %>" alt="" />
+        <div class="card-body flex">
+          <h3 class="plate-name capitalize"><%= featuredDish.name %></h3>
+          <span class="price"><%= featuredDish.price %> dh</span>
+          <div class="flower-shape"></div>
+        </div>
+      </div>
+      <% }) %> <% } %>
+    </div>
+    <div class="button-container">
+      <a href="/menu" class="btn btn-primary">Explorez tout le Menu</a>
+    </div>
+  </div>
+</section>
+
+<!--Our team-->
+<section class="our-team-section section">
+  <div class="section-title">
+    <h3 class="text-primary secondary-title">Voici</h3>
+    <h4 class="sub-title">Notre équipe</h4>
+    <div class="flower-shape"></div>
+  </div>
+  <div class="our-team-section flex">
+    <% if (teamMembers) { %> <% teamMembers.forEach((teamMember) => { %>
+    <div class="card">
+      <img src="<%= teamMember.avatarImagePath %> " alt="" />
+      <h5 class="capitalize"><%= teamMember.job %></h5>
+    </div>
+    <% }) %> <% } %>
+  </div>
+</section>
+
+<%- include('includes/buttonToTop'); %> 
+
+<%- include('includes/footer'); %>

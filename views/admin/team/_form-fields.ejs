@@ -1,0 +1,29 @@
+<div class="form-row">
+  <label for="">Avatar :</label>
+  <div class="input-file-wrapper team-input-avatar">
+    <% if (teamMember.avatarImagePath) { %>
+    <img
+      src="<%= teamMember.avatarImagePath %> "
+      alt=""
+      id="avatar-preview"
+      class="show"
+    />
+    <% } else { %>
+    <img src="" alt="" id="avatar-preview" />
+    <% } %>
+    <label for="uploaded-avatar" class="upload-label">
+      <i class="icon-pencil-alt"></i>
+      <input type="file" name="avatar" id="uploaded-avatar" class="upload-box" />
+    </label>
+  </div>
+</div>
+
+<div class="form-row">
+  <label for="">Nom :</label>
+  <input type="text" name="name" value="<%= teamMember.name %>" />
+</div>
+
+<div class="form-row">
+  <label for="">Poste :</label>
+  <input type="text" name="job" value="<%= teamMember.job %>" />
+</div>
