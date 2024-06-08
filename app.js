@@ -34,7 +34,7 @@ connectDB();
 app.use(express.static('public'));
 app.set('layout', 'layouts/main-layout');
 
-//EJS
+//EJSc setup
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
